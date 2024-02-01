@@ -104,16 +104,13 @@ categorizeAcidity(9);
 function introduceWarnerBro(name: string): any {
   switch (name) {
     case 'yakko':
-      console.log("We're the warner brothers!");
-      break;
+      return "We're the warner brothers!";
     case 'wakko':
-      console.log("We're the warner brothers!");
-      break;
+      return "We're the warner brothers!";
     case 'dot':
-      console.log(`I'm cute~`);
-      break;
+      return `I'm cute~`;
     default:
-      console.log('Goodnight everybody!');
+      return 'Goodnight everybody!';
   }
 }
 
@@ -126,27 +123,19 @@ introduceWarnerBro('minerva');
 function recommendMovie(genre: string): any {
   switch (genre) {
     case 'action':
-      console.log('Die hard');
-      break;
+      return 'Die hard';
     case 'comedy':
-      console.log('The Big Lebowski');
-      break;
+      return 'The Big Lebowski';
     case 'horror':
-      console.log('Halloween');
-      break;
+      return 'Halloween';
     case 'drama':
-      console.log(`Don't watch drama!`);
-      break;
+      return `Don't watch drama!`;
     case 'musical':
-      console.log('Pippin');
-      break;
+      return 'Pippin';
     case 'sci-fi':
-      console.log(`Ender's Game`);
-      break;
+      return `Ender's Game`;
     default:
-      console.log(
-        `Genre not recognized. Choose between action, comedy, horror, drama, musical, or sci-fi`
-      );
+      return `Genre not recognized. Choose between action, comedy, horror, drama, musical, or sci-fi`;
   }
 }
 
