@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+img {
+  width: 100%;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+}
+
+.col-full {
+  flex-basis: 100%;
+}
+
+.col-one-third {
+  flex-basis: calc(100% / 3);
+}
+
+.col-one-fourth {
+  flex-basis: 25%;
+}
+
+.col-two-thirds {
+  flex-basis: calc(200% / 3);
+}
