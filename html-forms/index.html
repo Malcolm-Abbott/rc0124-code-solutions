@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Forms</title>
+  </head>
+  <body>
+    <form>
+      <h1>Coding Form!</h1>
+      <div>
+        <label for="mail">Email</label>
+      </div>
+      <div>
+        <input type="email" id="mail" name="email" />
+      </div>
+      <div>
+        <label for="why-code">Why is coding cool?</label>
+      </div>
+      <select id="why-code" name="code-reason">
+        <option>Select an option</option>
+        <option value="interesting">Because it's interesting</option>
+        <option value="fun">Because it's fun</option>
+        <option value="powerful">Because it's powerful</option>
+      </select>
+      <fieldset>
+        <legend>Favorite Language (choose one)</legend>
+        <input type="radio" id="html" name="favorite-language" value="HTML" />
+        <label for="html">HTML</label>
+        <input type="radio" id="css" name="favorite-language" value="CSS" />
+        <label for="css">CSS</label>
+        <input
+          type="radio"
+          id="javascript"
+          name="favorite-language"
+          value="JavaScript" />
+        <label for="javascript">JavaScript</label>
+      </fieldset>
+      <fieldset>
+        <legend>Would you like to sign up for more information?</legend>
+        <input type="checkbox" name="sign-up" id="register" value="Register" />
+        <label for="register">Sign me up!</label>
+      </fieldset>
+      <div>
+        <label for="comments">Comments</label>
+      </div>
+      <div>
+        <textarea id="comments" name="comments" cols="40" rows="10"></textarea>
+      </div>
+      <button name="submit">Submit</button>
+    </form>
+  </body>
+</html>
