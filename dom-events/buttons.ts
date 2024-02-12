@@ -2,7 +2,7 @@ const $click = document.querySelector('.click-button');
 
 if (!$click) throw new Error('The $click query failed');
 
-function handleClick(event: Event): any {
+function handleClick(event: Event): void {
   console.log('button clicked');
   console.log('event:', event);
   console.log('event.target:', event.target);
@@ -15,7 +15,7 @@ const $hover = document.querySelector('.hover-button');
 
 if (!$hover) throw new Error('The $hover query failed');
 
-function handleMouseover(event: Event): any {
+function handleMouseover(event: Event): void {
   console.log('button hovered');
   console.log('event:', event);
   console.log('event.target:', event.target);
