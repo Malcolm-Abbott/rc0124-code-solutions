@@ -4,11 +4,10 @@ const $hot = document.querySelector('.hot-button');
 
 if (!$hot) throw new Error('The $hot query failed');
 
-$hot.addEventListener('click', (event: Event) => {
+$hot.addEventListener('click', (): void => {
   if (!$hot || !$clickCount)
     throw new Error('The $hot or $clickCount query failed');
   counter++;
-  console.log('event.type:', event.type);
   $clickCount.textContent = `Clicks: ${counter}`;
   switch (true) {
     case counter < 4:
