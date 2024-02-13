@@ -10,6 +10,7 @@ $taskList.addEventListener('click', (event) => {
 
   if ($eventTarget.tagName === 'BUTTON') {
     const $closestEventTargetLi = $eventTarget.closest('.task-list-item');
+    console.log('$closestEventTargetLi:', $closestEventTargetLi);
 
     if (!$closestEventTargetLi)
       throw new Error('Invalid $closestEventTargetLi query failed');
