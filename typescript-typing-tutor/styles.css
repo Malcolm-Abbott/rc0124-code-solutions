@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.current {
+  border-bottom: 3px solid black;
+}
+
+.go {
+  color: rgb(24, 205, 27);
+}
+
+.stop {
+  color: rgb(248, 6, 6);
+  border-color: rgb(248, 6, 6);
+}
+
+.col-full {
+  flex-basis: 100%;
+}
