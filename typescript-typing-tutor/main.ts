@@ -1,7 +1,7 @@
 const $span = document.querySelectorAll('span') as NodeListOf<HTMLElement>;
-const $h2 = document.querySelector('h2');
+const $h2 = document.querySelector('h2') as HTMLElement;
 let i: number = 0;
-let counterError = 0;
+let counterError: number = 0;
 
 if (!$span) throw new Error('The $span query failed');
 if (!$h2) throw new Error('The $h2 query failed');
