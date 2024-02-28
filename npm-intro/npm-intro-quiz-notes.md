@@ -18,6 +18,7 @@ Answer the following questions in the provided markdown file before turning in t
   npm install packageName
 - What happens when you add a dependency to a package with `npm`?
   It's added to your dependencies object in your package.json file
+  Creates a node_modules folder containing the folders of your dependencies installed
 - What is a devDependency and how do you add one to a package?
   A package that is only needed for local development and testing.
   npm install --save-dev packageName
