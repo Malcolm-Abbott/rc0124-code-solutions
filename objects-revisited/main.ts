@@ -1,6 +1,7 @@
 interface Employee {
   position: string;
   daysOfWeekWorking: string[];
+  fullTime?: boolean;
 }
 
 interface Business {
@@ -8,12 +9,7 @@ interface Business {
   closes: string;
   totalEmployees: number;
   daysOpen: string[];
-  employees: {
-    malcolm: Employee;
-    alexa: Employee;
-    james: Employee;
-    seamus: Employee;
-  };
+  employees: Record<string, Employee>;
 }
 
 const business: Business = {
@@ -43,13 +39,26 @@ const business: Business = {
 
 function addWeekends(): void {
   business.daysOpen.push('SAT', 'SUN');
-  console.log('daysOpen:', business.daysOpen);
   const employees = business.employees;
   for (const key in employees) {
     const employee: Employee = employees[key as keyof typeof employees];
     employee.daysOfWeekWorking?.push('SAT', 'SUN');
-    console.log('employee:', employee);
   }
 }
 
 addWeekends();
+
+async function addEmployees(): Promise<void> {
+  try {
+    const response: Response = await fetch(
+      'https://jsonplaceholder.typicode.com/users'
+    );
+    if (!response.ok) throw new Error(`HTTP Error! Status: ${response.status}`);
+    const user: Response = await response.json();
+    console.log('user:', user);
+  } catch (error) {
+    console.error('error:', error);
+  }
+}
+
+addEmployees();
