@@ -54,8 +54,29 @@ async function addEmployees(): Promise<void> {
       'https://jsonplaceholder.typicode.com/users'
     );
     if (!response.ok) throw new Error(`HTTP Error! Status: ${response.status}`);
-    const user: Response = await response.json();
-    console.log('user:', user);
+    const users = await response.json();
+    console.log('users:', users);
+
+    let i = 0;
+
+    users.forEach((user: Record<string, string | number>) => {
+      if (i >= 4) return;
+      const weekDays = ['M', 'T', 'W'];
+      const randomWeekDays = [...weekDays];
+      randomWeekDays.length = Math.ceil(Math.random() * 3);
+      business.employees[user.name] = {
+        position: '',
+        daysOfWeekWorking: [...randomWeekDays, 'SAT', 'SUN'],
+        fullTime: false,
+      };
+      if (i === 0) business.employees[user.name].position = 'Accountant';
+      if (i === 1) business.employees[user.name].position = 'Cashier';
+      if (i === 2) business.employees[user.name].position = 'HR Representative';
+      if (i === 3) business.employees[user.name].position = 'Assistant Manager';
+      i++;
+    });
+
+    console.log('business.employees:', business.employees);
   } catch (error) {
     console.error('error:', error);
   }
