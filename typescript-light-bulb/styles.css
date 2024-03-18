@@ -1,0 +1,33 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bulb {
+  height: 18rem;
+  width: 18rem;
+  border-radius: 50%;
+}
+
+.day {
+  background-color: rgb(250, 234, 132);
+}
+
+.sunshine {
+  background-color: rgb(254, 249, 241);
+}
+
+.night {
+  background-color: rgb(37, 37, 37);
+}
+
+.nightfall {
+  background-color: rgb(17, 17, 17);
+}
