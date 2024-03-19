@@ -24,6 +24,9 @@ To maintain data storage between re-renders.
 
 Because local variables don't persist throughout re-renders.
 
+Local variables don't persist between renders.
+Changes to local variables won't trigger renders.
+
 - What two actions happen when you call a `state setter` function?
 
 A state value is updated and cached to be used in the next invocation of the component.
