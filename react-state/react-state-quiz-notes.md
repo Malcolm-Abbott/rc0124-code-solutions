@@ -29,6 +29,11 @@ Because local variables don't persist throughout re-renders.
 A state value is updated and cached to be used in the next invocation of the component.
 React schedules a re-render of the component to occur.
 
+The useState Hook provides those two things:
+
+A state variable to retain the data between renders.
+A state setter function to update the variable and trigger React to render the component again.
+
 - When does the local `state variable` get updated with the new value?
 
 When the local state variable is re-rendered.
