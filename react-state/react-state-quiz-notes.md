@@ -24,6 +24,7 @@ Hooks—functions starting with use—can only be called at the top level of you
 - What is the purpose of state in React?
 
 To maintain data storage between re-renders.
+We use it to effect the display of a component.
 
 - Why can't we just maintain state in a local variable?
 
