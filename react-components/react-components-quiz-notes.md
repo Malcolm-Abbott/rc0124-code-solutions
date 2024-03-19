@@ -8,6 +8,8 @@ Answer the following questions in the provided markdown file before turning in t
 
 Functions that provide markup | functionality to your web page / project.
 
+A self-contained UI piece.
+
 - How do you define a component in React?
 
 ```react
