@@ -1,0 +1,59 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button {
+  border: 2px solid black;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+.cold {
+  background-color: rgb(53, 28, 117);
+}
+
+.cool {
+  background-color: rgb(103, 78, 167);
+}
+
+.tepid {
+  background-color: rgb(224, 102, 102);
+}
+
+.warm {
+  background-color: rgb(246, 178, 107);
+}
+
+.hot {
+  background-color: rgb(231, 231, 73);
+}
+
+.nuclear {
+  background-color: #fff;
+}
+
+.cold,
+.cool,
+.tepid {
+  color: #fff;
+}
+
+.warm,
+.hot,
+.nuclear {
+  color: black;
+}
