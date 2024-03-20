@@ -11,11 +11,11 @@ Actions that happen on a webpage.
 - What is an "event handler"? Which component declares the handler?
 
 An event handler is the function passed into the event prop.
-The component that creates the element declares the handler.
+The component that creates the element declares the handler. (The parent component)
 
 - How do you pass an event handler to a React component?
 
-By passing a function into an event prop.
+By passing a function into a prop.
 
 - What is the naming convention for event handlers?
 
