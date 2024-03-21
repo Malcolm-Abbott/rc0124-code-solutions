@@ -1,0 +1,34 @@
+.toggle-container {
+  border: 3px solid black;
+  height: 2rem;
+  width: 6rem;
+  border-radius: 0.75rem;
+  position: relative;
+}
+
+.toggle-switch {
+  border: 3px solid black;
+  width: 50%;
+  height: 85%;
+  border-radius: 0.75rem;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  background-color: #fff;
+}
+
+.on {
+  background-color: rgb(106, 168, 79);
+}
+
+.off {
+  background-color: rgb(226, 226, 226);
+}
+
+.toggle-on {
+  right: 0;
+}
+
+.toggle-off {
+  left: 0;
+}
