@@ -11,10 +11,12 @@ Controlled components track their values using state.
 - What are some advantages of using uncontrolled components?
 
 Performance, less callback functions running and not having to track state with every keydown.
+You do not need to manually track the values of the inputs.
 
 - What are some advantages of using controlled components?
 
 More control over the data being entered, all data is tracked in state with each keydown.
+Easier to share data between components.
 
 - Which style do you prefer?
 
