@@ -1,0 +1,15 @@
+.stopwatch-container {
+  border: 2px solid black;
+  min-width: 20rem;
+  min-height: 20rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.fa-icon {
+  margin-top: 1rem;
+  cursor: pointer;
+}
