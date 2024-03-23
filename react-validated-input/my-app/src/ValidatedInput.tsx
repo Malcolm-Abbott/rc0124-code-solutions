@@ -22,13 +22,19 @@ export function ValidatedInput() {
 
   function handleChange(event: ChangeEvent<HTMLInputElement>) {
     setPassword(event.target.value);
-    if (password.length < 7) {
+    const length = event.target.value.length;
+    if (length === 1) {
       setMessage('Your password is too short.');
       setIndex(2);
-    }
-    if (password.length >= 7) {
+    } else if (length === 8) {
       setMessage('');
       setIndex(1);
+    } else if (length === 7) {
+      setMessage('Your password is too short.');
+      setIndex(2);
+    } else if (length === 0) {
+      setMessage('A password is required.');
+      setIndex(2);
     }
   }
 
