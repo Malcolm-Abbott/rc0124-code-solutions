@@ -1,28 +1,22 @@
 type Props = {
-  onIndicatorClick: () => void;
+  onIndicatorClick: (arg0: number) => void;
+  currentIndex: number;
+  items: string[];
 };
 
-export function Indicators({ onIndicatorClick }: Props) {
-  return (
-    <div className="indicators">
-      <button type="button" onClick={onIndicatorClick}>
-        0
+export function Indicators({ onIndicatorClick, currentIndex, items }: Props) {
+  const buttons = items.map((item, index) => {
+    return (
+      <button
+        key={index}
+        type="button"
+        onClick={() => {
+          onIndicatorClick(index);
+        }}
+        className={currentIndex === index ? 'highlight' : ''}>
+        {index}
       </button>
-      <button type="button" onClick={onIndicatorClick}>
-        1
-      </button>
-      <button type="button" onClick={onIndicatorClick}>
-        2
-      </button>
-      <button type="button" onClick={onIndicatorClick}>
-        3
-      </button>
-      <button type="button" onClick={onIndicatorClick}>
-        4
-      </button>
-      <button type="button" onClick={onIndicatorClick}>
-        5
-      </button>
-    </div>
-  );
+    );
+  });
+  return <div className="indicators">{buttons}</div>;
 }

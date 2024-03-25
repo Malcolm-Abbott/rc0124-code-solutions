@@ -13,3 +13,7 @@ button {
 .indicators {
   margin: 0.25rem 0;
 }
+
+.highlight {
+  background-color: rgb(180, 216, 170);
+}
