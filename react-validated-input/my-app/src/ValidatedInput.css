@@ -1,0 +1,26 @@
+label {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+p {
+  margin-block-start: 0;
+  color: red;
+}
+
+.input-wrapper {
+  display: flex;
+}
+
+input {
+  margin-right: 0.5rem;
+  min-height: 1.5rem;
+}
+
+.confirm {
+  color: green;
+}
+
+.cancel {
+  color: red;
+}
