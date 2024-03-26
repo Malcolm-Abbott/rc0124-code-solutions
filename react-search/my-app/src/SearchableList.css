@@ -1,0 +1,17 @@
+form {
+  position: relative;
+}
+
+input {
+  min-height: 1.75rem;
+  border-radius: 1rem;
+  min-width: 30rem;
+  padding-left: 2rem;
+}
+
+img {
+  position: absolute;
+  left: 0.5rem;
+  top: 6px;
+  cursor: pointer;
+}
