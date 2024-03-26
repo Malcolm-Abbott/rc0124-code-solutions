@@ -24,6 +24,7 @@ Data can be passed from parent to child using props.
 - How can children components modify state in their parents?
 
 By passing the data to the child component using props.
+By passing callback functions / event handlers to children to pass up modified state values to parents.
 
 ## Notes
 
