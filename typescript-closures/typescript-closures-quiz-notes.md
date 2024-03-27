@@ -24,6 +24,7 @@ Every time a function is created, at function creation time.
 - How can you tell if a function will be created with a closure?
 
 If a function is wrapped inside of another function.
+When a variable outside of its local scope is referenced.
 
 - In React, what is one important case where you need to know if a closure was created?
 
