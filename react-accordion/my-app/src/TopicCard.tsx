@@ -12,7 +12,7 @@ type Props = {
 export function TopicCard({ topics, onTopicClick }: Props) {
   const arrayOfTopics = topics.map((topic, index) => {
     return (
-      <div key={index} onClick={onTopicClick}>
+      <div key={index} onClick={onTopicClick} className="topic-wrapper">
         <h1>{topic.title}</h1>
         <p>{topic.content}</p>
       </div>
