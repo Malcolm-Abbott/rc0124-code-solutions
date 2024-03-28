@@ -1,5 +1,6 @@
 // import { useState } from "react";
 import { TopicCard } from './TopicCard';
+import { useState } from 'react';
 import './Accordion.css';
 
 interface Topic {
@@ -13,13 +14,23 @@ type Props = {
 };
 
 export function Accordion({ topics }: Props) {
-  function topicHandler() {
-    return true;
+  const [topic, setTopic] = useState<Topic>();
+
+  function topicHandler(card: Topic) {
+    if (card !== topic) {
+      setTopic(card);
+    } else {
+      setTopic(undefined);
+    }
   }
 
   return (
     <>
-      <TopicCard topics={topics} onTopicClick={topicHandler} />
+      <TopicCard
+        topics={topics}
+        onTopicClick={topicHandler}
+        currentTopic={topic}
+      />
     </>
   );
 }

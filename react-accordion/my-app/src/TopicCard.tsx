@@ -6,15 +6,19 @@ interface Topic {
 
 type Props = {
   topics: Topic[];
-  onTopicClick: () => void;
+  onTopicClick: (arg1: Topic) => void;
+  currentTopic: Topic | undefined;
 };
 
-export function TopicCard({ topics, onTopicClick }: Props) {
+export function TopicCard({ topics, onTopicClick, currentTopic }: Props) {
   const arrayOfTopics = topics.map((topic, index) => {
     return (
-      <div key={index} onClick={onTopicClick} className="topic-wrapper">
+      <div
+        key={index}
+        onClick={() => onTopicClick(topic)}
+        className="topic-wrapper">
         <h1>{topic.title}</h1>
-        <p>{topic.content}</p>
+        {topic === currentTopic && <p>{topic.content}</p>}
       </div>
     );
   });
