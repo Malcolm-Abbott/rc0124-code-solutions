@@ -21,7 +21,11 @@ Declare a ref object, set it as an attribute to the desired element, then call t
 
 - How do you manipulate child components in React?
 
+By passing props to them so that the parents can pass down callback functions or data to operate on.
+
 - How can you render nested JSX elements in React?
+
+With the children prop.
 
 ## Notes
 
