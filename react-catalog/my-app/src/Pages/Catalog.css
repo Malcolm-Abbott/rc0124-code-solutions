@@ -1,0 +1,19 @@
+.item {
+  display: block;
+  cursor: pointer;
+}
+
+.image {
+  width: 100%;
+  height: 350px;
+  object-fit: contain;
+}
+
+.description {
+  height: 4.5rem;
+  overflow: hidden;
+}
+
+.price {
+  color: rgb(98, 99, 106);
+}
