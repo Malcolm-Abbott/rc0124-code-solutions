@@ -15,7 +15,7 @@ export function NavBar() {
             </li>
             <li className="nav-item nav-link">
               <Link to="/" className="title">
-                Dashboard
+                Catalog
               </Link>
             </li>
           </ul>

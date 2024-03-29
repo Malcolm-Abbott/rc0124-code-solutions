@@ -67,14 +67,12 @@ export function Details() {
           </div>
         </div>
       </div>
-      <button className="btn btn-light">
-        <Link
-          to="/"
-          className="no-decoration"
-          onClick={() => alert(`Added ${name} to cart.`)}>
-          Add to Cart
-        </Link>
-      </button>
+      <Link
+        to="/"
+        className="no-decoration"
+        onClick={() => alert(`Added ${name} to cart.`)}>
+        <button className="btn btn-light">Add to Cart</button>
+      </Link>
     </div>
   );
 }
