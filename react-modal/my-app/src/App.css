@@ -1,0 +1,20 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.delete {
+  color: #fff;
+  margin: 2rem;
+}
+
+.cancel {
+  background-color: red;
+  margin: 2rem;
+}
+
+.modal-content {
+  padding: 5rem;
+}
