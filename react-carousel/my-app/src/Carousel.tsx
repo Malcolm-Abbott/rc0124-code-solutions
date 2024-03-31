@@ -22,6 +22,10 @@ export function Carousel({ images }: Props) {
     return () => clearInterval(intervalID);
   });
 
+  function circleClickHandler(activeIndex: number) {
+    setIndex(activeIndex);
+  }
+
   return (
     <div className="carousel-container">
       <FaLessThan
@@ -33,7 +37,11 @@ export function Carousel({ images }: Props) {
         <img src={images[index].src} alt={images[index].alt} />
       </div>
       <div className="circle-container">
-        <Circle images={images} currentIndex={index} />
+        <Circle
+          images={images}
+          currentIndex={index}
+          onCircleClick={circleClickHandler}
+        />
       </div>
       <FaGreaterThan
         size={60}
