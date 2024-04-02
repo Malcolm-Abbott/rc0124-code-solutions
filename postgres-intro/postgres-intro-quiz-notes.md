@@ -16,6 +16,7 @@ Arguably the most advanced open source database of its kind.
 It has a robust feature set, complies well with the standards, and is reliable.
 
 Other popular relation databases include MySQL, SQL Server by Microsoft, and Oracle by Oracle Corporation.
+MariaDB, SQLite.
 
 - What are some advantages of learning a relational database?
 
