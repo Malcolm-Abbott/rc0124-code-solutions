@@ -1,0 +1,63 @@
+.flex-page {
+  display: flex;
+  height: 100vh;
+}
+
+.nav-bar {
+  box-shadow: 0 3px 4px 4px rgba(0, 0, 0, 0.2);
+  padding-top: 1rem;
+  padding-right: 1rem;
+}
+
+.is-closed {
+  width: 7.5rem;
+}
+
+.is-open {
+  width: 20rem;
+}
+
+.fa-bars {
+  cursor: pointer;
+}
+
+.nav-heading {
+  padding: 1rem 0;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  margin: 2rem 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.flex-li {
+  display: flex;
+}
+
+.p-li {
+  margin-left: 0.5rem;
+  color: black;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
+}
