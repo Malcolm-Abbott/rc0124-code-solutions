@@ -87,7 +87,7 @@ Using the universal selector (\*).
 
 - How do you control the sort order of a result set?
 
-By adding a sort by clause.
+By adding an order by clause.
 
 Sorting Results
 
