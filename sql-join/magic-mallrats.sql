@@ -4,5 +4,4 @@ select "customers"."firstName",
   join "rentals" using ("customerId")
   join "inventory" using ("inventoryId")
   join "films" using ("filmId")
-  where "films"."title" = 'Magic Mallrats'
-    and "films"."rentalDuration" > 0;
+  where "films"."title" = 'Magic Mallrats';
