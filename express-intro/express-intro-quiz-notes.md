@@ -7,14 +7,16 @@ Answer the following questions in the provided markdown file before turning in t
 - What is Express useful for?
 
 Managing servers and routes in a Node environment.
+To build servers quickly.
 
 - How does Express fit into a full-stack web application?
 
 It helps with HTTP requests.
+Provides us the server portion of the 3 component architecture.
 
 - How do you add `express` to your package dependencies?
-
-npm i express
+  npm init (if no package.json)
+  npm i express
 
 - What Express application method starts the server and binds it to a network `port`?
 
