@@ -10,7 +10,9 @@ To be able to retrieve and send static files (files which are not dynamic) upon 
 
 - What does `express.static()` return?
 
-A file.
+A directory.
+
+It returns an Object.
 
 - What are several examples of static files?
 
