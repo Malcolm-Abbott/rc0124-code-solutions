@@ -45,7 +45,7 @@ app.put('/api/notes', async (req, res, next) => {
       return;
     }
     if (content === undefined) {
-      res.status(400).send({ error: 'content is required' });
+      throw new ClientError(400, 'content is required');
       return;
     }
     const note = {
