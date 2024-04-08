@@ -7,6 +7,7 @@ Answer the following questions in the provided markdown file before turning in t
 - What is the significance of an HTTP request's method?
 
 It determines that action that is to be performed on the requested data.
+Determines the selected action that should be performed.
 
 - What is the significance of an HTTP response's status?
 
