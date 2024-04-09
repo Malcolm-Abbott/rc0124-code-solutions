@@ -10,6 +10,8 @@ fetch()
 
 - What two things need to be done to properly handle HTTP request errors? Why?
 
+Checking the response.ok property and throwing an error if it's not response.ok
+
 Set a catch block to catch that the try block needs to cease to execute and the catch block needs to run.
 
 Update the error in state.
