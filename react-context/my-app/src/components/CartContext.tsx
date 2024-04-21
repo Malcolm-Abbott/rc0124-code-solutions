@@ -15,3 +15,5 @@ export const CartContext = createContext<CartContextValues>({
   cart: [],
   addToCart: () => undefined,
 });
+
+export const CartProvider = CartContext.Provider;

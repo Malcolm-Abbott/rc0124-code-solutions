@@ -1,4 +1,4 @@
-import { type ShoppingCartItem, CartContext } from './components/CartContext';
+import { type ShoppingCartItem, CartProvider } from './components/CartContext';
 import { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { Header } from './components/Header';
@@ -19,7 +19,7 @@ export function App() {
   const cartContextValues = { cart, addToCart };
 
   return (
-    <CartContext.Provider value={cartContextValues}>
+    <CartProvider value={cartContextValues}>
       <Routes>
         <Route path="/" element={<Header />}>
           <Route index element={<Catalog />} />
@@ -28,6 +28,6 @@ export function App() {
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
-    </CartContext.Provider>
+    </CartProvider>
   );
 }

@@ -1,5 +1,4 @@
-import { useContext } from 'react';
-import { CartContext } from '../components/CartContext';
+import { useCart } from '../components/useCart';
 import { useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { readProduct, type Product, toDollars } from '../lib';
@@ -10,7 +9,7 @@ export function ProductDetails() {
   const [product, setProduct] = useState<Product>();
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<unknown>();
-  const { addToCart } = useContext(CartContext);
+  const { addToCart } = useCart();
 
   useEffect(() => {
     async function loadProduct(productId: number) {
