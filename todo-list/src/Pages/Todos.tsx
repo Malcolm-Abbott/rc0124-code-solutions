@@ -1,5 +1,6 @@
 import { Title } from '../Components/Title';
 import { TodoForm } from '../Components/TodoForm';
+import { TodoList } from '../Components/TodoList';
 
 export type Todo = {
   task: string;
@@ -21,6 +22,7 @@ export function Todos() {
         <div className="px-4">
           <Title title="Todo List" />
           <TodoForm onSubmit={addTodo} />
+          <TodoList />
         </div>
       </div>
     </div>
