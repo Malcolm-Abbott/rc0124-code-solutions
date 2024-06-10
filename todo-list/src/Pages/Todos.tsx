@@ -16,13 +16,17 @@ export function Todos() {
     localStorage.setItem('todo-storage', JSON.stringify(todos));
   }
 
+  function toggleCompleted(todo: Todo) {
+    console.log('firing', todo);
+  }
+
   return (
     <div className="container">
       <div className="grid place-items-center">
         <div className="px-4">
           <Title title="Todo List" />
           <TodoForm onSubmit={addTodo} />
-          <TodoList />
+          <TodoList toggleCompleted={toggleCompleted} />
         </div>
       </div>
     </div>

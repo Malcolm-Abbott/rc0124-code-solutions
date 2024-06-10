@@ -1,15 +1,24 @@
 import type { Todo } from '../Pages/Todos';
 import './TodoList.css';
 
-export function TodoList() {
+type Props = {
+  toggleCompleted: (todo: Todo) => void;
+};
+
+export function TodoList({ toggleCompleted }: Props) {
   const storedData = localStorage.getItem('todo-storage');
   const todos = storedData === null ? [] : JSON.parse(storedData);
-  console.log('todos TodoList:', todos);
 
   return (
     <ul className="border rounded border-gray-300 divide-y">
       {todos.map((todo: Todo) => {
-        return <TodoItem todo={todo} key={todo.todoId} />;
+        return (
+          <TodoItem
+            todo={todo}
+            key={todo.todoId}
+            toggleCompleted={toggleCompleted}
+          />
+        );
       })}
     </ul>
   );
@@ -17,9 +26,10 @@ export function TodoList() {
 
 type TodoProps = {
   todo: Todo;
+  toggleCompleted: (todo: Todo) => void;
 };
 
-function TodoItem({ todo }: TodoProps) {
+function TodoItem({ todo, toggleCompleted }: TodoProps) {
   const { task, isCompleted } = todo;
   const completedClass = isCompleted ? 'is-completed' : '';
 
@@ -31,6 +41,7 @@ function TodoItem({ todo }: TodoProps) {
             type="checkbox"
             defaultChecked={isCompleted}
             className="mt-1 -ml-6 mr-2"
+            onChange={() => toggleCompleted(todo)}
           />
           {task}
         </label>
