@@ -1,6 +1,7 @@
 import { Title } from '../Components/Title';
 import { TodoForm } from '../Components/TodoForm';
 import { TodoList } from '../Components/TodoList';
+import { useState, useEffect } from 'react';
 
 export type Todo = {
   task: string;
@@ -9,15 +10,33 @@ export type Todo = {
 };
 
 export function Todos() {
+  const [tasks, setTasks] = useState<Todo[]>([]);
+
+  useEffect(() => {
+    const storedData = localStorage.getItem('todo-storage');
+    const todos = storedData === null ? [] : JSON.parse(storedData);
+    setTasks(todos);
+    console.log(tasks);
+  }, []);
+
   function addTodo(newTodo: Todo) {
     const storedData = localStorage.getItem('todo-storage');
     const todos = storedData === null ? [] : JSON.parse(storedData);
     todos.push(newTodo);
     localStorage.setItem('todo-storage', JSON.stringify(todos));
+    setTasks(todos);
   }
 
   function toggleCompleted(todo: Todo) {
-    console.log('firing', todo);
+    const storedData = localStorage.getItem('todo-storage');
+    const todos = storedData === null ? [] : JSON.parse(storedData);
+    todos.forEach((task: Todo) => {
+      if (task.todoId === todo.todoId) {
+        task.isCompleted = !task.isCompleted;
+      }
+    });
+    localStorage.setItem('todo-storage', JSON.stringify(todos));
+    setTasks(todos);
   }
 
   return (
