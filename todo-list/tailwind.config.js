@@ -6,6 +6,9 @@ export default {
       container: {
         center: true,
       },
+      boxShadow: {
+        '3xl': '0 0 15px -8px',
+      },
     },
   },
   plugins: [],

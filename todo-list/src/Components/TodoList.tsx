@@ -3,12 +3,10 @@ import './TodoList.css';
 
 type Props = {
   toggleCompleted: (todo: Todo) => void;
+  todos: Todo[];
 };
 
-export function TodoList({ toggleCompleted }: Props) {
-  const storedData = localStorage.getItem('todo-storage');
-  const todos = storedData === null ? [] : JSON.parse(storedData);
-
+export function TodoList({ toggleCompleted, todos }: Props) {
   return (
     <ul className="border rounded border-gray-300 divide-y">
       {todos.map((todo: Todo) => {

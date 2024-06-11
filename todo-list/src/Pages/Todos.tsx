@@ -1,6 +1,7 @@
 import { Title } from '../Components/Title';
 import { TodoForm } from '../Components/TodoForm';
 import { TodoList } from '../Components/TodoList';
+import { TodoFooter } from '../Components/TodoFooter';
 import { useState, useEffect } from 'react';
 
 export type Todo = {
@@ -16,7 +17,6 @@ export function Todos() {
     const storedData = localStorage.getItem('todo-storage');
     const todos = storedData === null ? [] : JSON.parse(storedData);
     setTasks(todos);
-    console.log(tasks);
   }, []);
 
   function addTodo(newTodo: Todo) {
@@ -39,13 +39,20 @@ export function Todos() {
     setTasks(todos);
   }
 
+  let remainingTasks = 0;
+
+  tasks.forEach((task: Todo) => {
+    if (!task.isCompleted) remainingTasks++;
+  });
+
   return (
     <div className="container">
-      <div className="grid place-items-center">
-        <div className="px-4">
-          <Title title="Todo List" />
+      <div className="grid place-items-center gap-2">
+        <Title title="Todo List" />
+        <div className="px-4 w-2/4 shadow-3xl rounded-lg p-12 bg-white">
           <TodoForm onSubmit={addTodo} />
-          <TodoList toggleCompleted={toggleCompleted} />
+          <TodoList todos={tasks} toggleCompleted={toggleCompleted} />
+          <TodoFooter remainingTasks={remainingTasks} />
         </div>
       </div>
     </div>
