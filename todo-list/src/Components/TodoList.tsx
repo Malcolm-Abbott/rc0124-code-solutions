@@ -6,9 +6,10 @@ import React, { useState } from 'react';
 type Props = {
   toggleCompleted: (todo: Todo) => void;
   todos: Todo[];
+  deleteTodo: (todo: Todo) => void;
 };
 
-export function TodoList({ toggleCompleted, todos }: Props) {
+export function TodoList({ toggleCompleted, todos, deleteTodo }: Props) {
   return (
     <ul className="border rounded border-gray-300 divide-y">
       {todos.map((todo: Todo) => {
@@ -17,6 +18,7 @@ export function TodoList({ toggleCompleted, todos }: Props) {
             todo={todo}
             key={todo.todoId}
             toggleCompleted={toggleCompleted}
+            deleteTodo={deleteTodo}
           />
         );
       })}
@@ -27,9 +29,10 @@ export function TodoList({ toggleCompleted, todos }: Props) {
 type TodoProps = {
   todo: Todo;
   toggleCompleted: (todo: Todo) => void;
+  deleteTodo: (todo: Todo) => void;
 };
 
-function TodoItem({ todo, toggleCompleted }: TodoProps) {
+function TodoItem({ todo, toggleCompleted, deleteTodo }: TodoProps) {
   const [isHovered, setIsHovered] = useState(false);
   const { task, isCompleted } = todo;
   const completedClass = isCompleted ? 'is-completed' : '';
@@ -56,7 +59,13 @@ function TodoItem({ todo, toggleCompleted }: TodoProps) {
           {task}
         </label>
       </div>
-      {isHovered ? <FaTrash color="red" className="cursor-pointer " /> : null}
+      {isHovered ? (
+        <FaTrash
+          color="red"
+          className="cursor-pointer"
+          onClick={() => deleteTodo(todo)}
+        />
+      ) : null}
     </li>
   );
 }

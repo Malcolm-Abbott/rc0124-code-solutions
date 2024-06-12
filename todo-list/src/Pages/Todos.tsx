@@ -2,7 +2,7 @@ import { Title } from '../Components/Title';
 import { TodoForm } from '../Components/TodoForm';
 import { TodoList } from '../Components/TodoList';
 import { TodoFooter } from '../Components/TodoFooter';
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 export type Todo = {
   task: string;
@@ -26,6 +26,16 @@ export function Todos() {
     todos.push(newTodo);
     localStorage.setItem('todo-storage', JSON.stringify(todos));
     setTasks(todos);
+  }
+
+  function deleteTodo(todo: Todo) {
+    const storedData = localStorage.getItem('todo-storage');
+    const todos = storedData === null ? [] : JSON.parse(storedData);
+    const updatedTodos = todos.filter(
+      (task: Todo) => task.todoId !== todo.todoId
+    );
+    localStorage.setItem('todo-storage', JSON.stringify(updatedTodos));
+    setTasks(updatedTodos);
   }
 
   function toggleCompleted(todo: Todo) {
@@ -80,6 +90,7 @@ export function Todos() {
           <TodoList
             todos={displayableTasks !== undefined ? displayableTasks : tasks}
             toggleCompleted={toggleCompleted}
+            deleteTodo={deleteTodo}
           />
           <TodoFooter
             remainingTasks={remainingTasks}
