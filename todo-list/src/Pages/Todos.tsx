@@ -75,7 +75,11 @@ export function Todos() {
             todos={displayableTasks !== undefined ? displayableTasks : tasks}
             toggleCompleted={toggleCompleted}
           />
-          <TodoFooter remainingTasks={remainingTasks} setFilter={setFilter} />
+          <TodoFooter
+            remainingTasks={remainingTasks}
+            setFilter={setFilter}
+            filter={filter}
+          />
         </div>
       </div>
     </div>
