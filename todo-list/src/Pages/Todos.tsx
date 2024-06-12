@@ -2,7 +2,7 @@ import { Title } from '../Components/Title';
 import { TodoForm } from '../Components/TodoForm';
 import { TodoList } from '../Components/TodoList';
 import { TodoFooter } from '../Components/TodoFooter';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 export type Todo = {
   task: string;
