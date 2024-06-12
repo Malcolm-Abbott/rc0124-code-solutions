@@ -2,9 +2,15 @@ type Props = {
   remainingTasks: number;
   setFilter: (arg1: string) => void;
   filter: string;
+  deleteCompleted: () => void;
 };
 
-export function TodoFooter({ remainingTasks, setFilter, filter }: Props) {
+export function TodoFooter({
+  remainingTasks,
+  setFilter,
+  filter,
+  deleteCompleted,
+}: Props) {
   return (
     <div className="py-3 ring-1 ring-gray-200 rounded-md mt-16 flex">
       <div className="basis-1/3 px-4">{remainingTasks} Remaining Tasks</div>
@@ -38,10 +44,8 @@ export function TodoFooter({ remainingTasks, setFilter, filter }: Props) {
         </div>
       </div>
       <div className="px-4 basis-1/3 flex justify-end">
-        <button>Clear Completed</button>
+        <button onClick={deleteCompleted}>Clear Completed</button>
       </div>
     </div>
   );
 }
-
-// const saveClass = 'py-3 px-8';

@@ -40,6 +40,15 @@ export function Todos() {
     setTasks(todos);
   }
 
+  function deleteCompleted() {
+    const storedData = localStorage.getItem('todo-storage');
+    if (storedData === null) return;
+    const todos = storedData === null ? [] : JSON.parse(storedData);
+    const incompleteTodos = todos.filter((todo: Todo) => !todo.isCompleted);
+    localStorage.setItem('todo-storage', JSON.stringify(incompleteTodos));
+    setTasks(incompleteTodos);
+  }
+
   let remainingTasks = 0;
 
   tasks.forEach((task: Todo) => {
@@ -53,15 +62,12 @@ export function Todos() {
   switch (true) {
     case filter === 'all':
       displayableTasks = tasks;
-      console.log(displayableTasks);
       break;
     case filter === 'active':
       displayableTasks = incompleteTasks;
-      console.log('incomplete', displayableTasks);
       break;
     case filter === 'complete':
       displayableTasks = completeTasks;
-      console.log('completed tasks:', completeTasks);
       break;
   }
 
@@ -79,6 +85,7 @@ export function Todos() {
             remainingTasks={remainingTasks}
             setFilter={setFilter}
             filter={filter}
+            deleteCompleted={deleteCompleted}
           />
         </div>
       </div>
