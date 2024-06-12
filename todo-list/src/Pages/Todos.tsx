@@ -12,6 +12,7 @@ export type Todo = {
 
 export function Todos() {
   const [tasks, setTasks] = useState<Todo[]>([]);
+  const [filter, setFilter] = useState('all');
 
   useEffect(() => {
     const storedData = localStorage.getItem('todo-storage');
@@ -45,14 +46,36 @@ export function Todos() {
     if (!task.isCompleted) remainingTasks++;
   });
 
+  const incompleteTasks = tasks.filter((task) => !task.isCompleted);
+  const completeTasks = tasks.filter((task) => task.isCompleted);
+
+  let displayableTasks;
+  switch (true) {
+    case filter === 'all':
+      displayableTasks = tasks;
+      console.log(displayableTasks);
+      break;
+    case filter === 'active':
+      displayableTasks = incompleteTasks;
+      console.log('incomplete', displayableTasks);
+      break;
+    case filter === 'complete':
+      displayableTasks = completeTasks;
+      console.log('completed tasks:', completeTasks);
+      break;
+  }
+
   return (
     <div className="container">
       <div className="grid place-items-center gap-2">
         <Title title="Todo List" />
         <div className="px-4 w-2/4 shadow-3xl rounded-lg p-12 bg-white">
           <TodoForm onSubmit={addTodo} />
-          <TodoList todos={tasks} toggleCompleted={toggleCompleted} />
-          <TodoFooter remainingTasks={remainingTasks} />
+          <TodoList
+            todos={displayableTasks !== undefined ? displayableTasks : tasks}
+            toggleCompleted={toggleCompleted}
+          />
+          <TodoFooter remainingTasks={remainingTasks} setFilter={setFilter} />
         </div>
       </div>
     </div>
