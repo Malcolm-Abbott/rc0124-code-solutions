@@ -42,7 +42,7 @@ export function TodoList({
     return (
       <ul className="border rounded border-gray-300 divide-y">
         {todos.map((todo: Todo) => {
-          if (todo.task.includes(searchValue)) {
+          if (todo.task.toLowerCase().includes(searchValue.toLowerCase())) {
             return (
               <TodoItem
                 todo={todo}
