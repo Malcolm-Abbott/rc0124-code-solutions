@@ -23,6 +23,7 @@ export function Todos() {
   }, []);
 
   function addTodo(newTodo: Todo) {
+    if (newTodo.task.length === 0) return;
     const storedData = localStorage.getItem('todo-storage');
     const todos = storedData === null ? [] : JSON.parse(storedData);
     todos.push(newTodo);
