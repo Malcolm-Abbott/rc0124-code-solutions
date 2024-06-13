@@ -104,6 +104,7 @@ export function Todos() {
             toggleCompleted={toggleCompleted}
             deleteTodo={deleteTodo}
             searchValue={searchValue}
+            setTasks={setTasks}
           />
           <TodoFooter
             remainingTasks={remainingTasks}

@@ -8,6 +8,7 @@ type Props = {
   todos: Todo[];
   deleteTodo: (todo: Todo) => void;
   searchValue: string;
+  setTasks: (arg1: Todo[]) => void;
 };
 
 export function TodoList({
@@ -15,7 +16,28 @@ export function TodoList({
   todos,
   deleteTodo,
   searchValue,
+  setTasks,
 }: Props) {
+  function moveTaskUp(todo: Todo) {
+    const index = todos.indexOf(todo);
+    if (index === 0) return;
+    const updatedTodos = [...todos];
+    updatedTodos.splice(index, 1);
+    updatedTodos.splice(index - 1, 0, todo);
+    localStorage.setItem('todo-storage', JSON.stringify(updatedTodos));
+    setTasks(updatedTodos);
+  }
+
+  function moveTaskDown(todo: Todo) {
+    const index = todos.indexOf(todo);
+    if (index === todos.length - 1) return;
+    const updatedTodos = [...todos];
+    updatedTodos.splice(index, 1);
+    updatedTodos.splice(index + 1, 0, todo);
+    localStorage.setItem('todo-storage', JSON.stringify(updatedTodos));
+    setTasks(updatedTodos);
+  }
+
   if (searchValue.length > 0) {
     return (
       <ul className="border rounded border-gray-300 divide-y">
@@ -27,6 +49,8 @@ export function TodoList({
                 key={todo.todoId}
                 toggleCompleted={toggleCompleted}
                 deleteTodo={deleteTodo}
+                moveTaskUp={moveTaskUp}
+                moveTaskDown={moveTaskDown}
               />
             );
           }
@@ -44,6 +68,8 @@ export function TodoList({
             key={todo.todoId}
             toggleCompleted={toggleCompleted}
             deleteTodo={deleteTodo}
+            moveTaskUp={moveTaskUp}
+            moveTaskDown={moveTaskDown}
           />
         );
       })}
@@ -55,14 +81,24 @@ type TodoProps = {
   todo: Todo;
   toggleCompleted: (todo: Todo) => void;
   deleteTodo: (todo: Todo) => void;
+  moveTaskUp: (arg1: Todo) => void;
+  moveTaskDown: (arg1: Todo) => void;
 };
 
-function TodoItem({ todo, toggleCompleted, deleteTodo }: TodoProps) {
+function TodoItem({
+  todo,
+  toggleCompleted,
+  deleteTodo,
+  moveTaskUp,
+  moveTaskDown,
+}: TodoProps) {
   const [isHovered, setIsHovered] = useState(false);
   const { task, isCompleted } = todo;
   const completedClass = isCompleted ? 'is-completed' : '';
 
   function handleKeyUp(event: React.KeyboardEvent, todo: Todo) {
+    if (event.key === 'ArrowUp') moveTaskUp(todo);
+    if (event.key === 'ArrowDown') moveTaskDown(todo);
     if (event.key !== 'Enter') return;
     toggleCompleted(todo);
   }
