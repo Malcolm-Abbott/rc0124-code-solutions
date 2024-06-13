@@ -7,9 +7,34 @@ type Props = {
   toggleCompleted: (todo: Todo) => void;
   todos: Todo[];
   deleteTodo: (todo: Todo) => void;
+  searchValue: string;
 };
 
-export function TodoList({ toggleCompleted, todos, deleteTodo }: Props) {
+export function TodoList({
+  toggleCompleted,
+  todos,
+  deleteTodo,
+  searchValue,
+}: Props) {
+  if (searchValue.length > 0) {
+    return (
+      <ul className="border rounded border-gray-300 divide-y">
+        {todos.map((todo: Todo) => {
+          if (todo.task.includes(searchValue)) {
+            return (
+              <TodoItem
+                todo={todo}
+                key={todo.todoId}
+                toggleCompleted={toggleCompleted}
+                deleteTodo={deleteTodo}
+              />
+            );
+          }
+        })}
+      </ul>
+    );
+  }
+
   return (
     <ul className="border rounded border-gray-300 divide-y">
       {todos.map((todo: Todo) => {

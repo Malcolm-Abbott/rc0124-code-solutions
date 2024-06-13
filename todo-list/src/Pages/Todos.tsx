@@ -1,8 +1,9 @@
 import { Title } from '../Components/Title';
 import { TodoForm } from '../Components/TodoForm';
+import { SearchBar } from '../Components/SearchBar';
 import { TodoList } from '../Components/TodoList';
 import { TodoFooter } from '../Components/TodoFooter';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, ChangeEvent } from 'react';
 
 export type Todo = {
   task: string;
@@ -13,6 +14,7 @@ export type Todo = {
 export function Todos() {
   const [tasks, setTasks] = useState<Todo[]>([]);
   const [filter, setFilter] = useState('all');
+  const [searchValue, setSearchValue] = useState('');
 
   useEffect(() => {
     const storedData = localStorage.getItem('todo-storage');
@@ -81,16 +83,27 @@ export function Todos() {
       break;
   }
 
+  function handleSearch(event: ChangeEvent<HTMLInputElement>) {
+    setSearchValue(event.target.value);
+  }
+
   return (
     <div className="container">
       <div className="grid place-items-center gap-2">
         <Title title="Todo List" />
         <div className="px-4 w-2/4 shadow-3xl rounded-lg p-12 bg-white">
-          <TodoForm onSubmit={addTodo} />
+          <div className="flex justify-between">
+            <TodoForm onSubmit={addTodo} />
+            <SearchBar
+              searchValue={searchValue}
+              onSearchChange={handleSearch}
+            />
+          </div>
           <TodoList
             todos={displayableTasks !== undefined ? displayableTasks : tasks}
             toggleCompleted={toggleCompleted}
             deleteTodo={deleteTodo}
+            searchValue={searchValue}
           />
           <TodoFooter
             remainingTasks={remainingTasks}
