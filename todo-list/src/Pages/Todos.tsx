@@ -91,7 +91,7 @@ export function Todos() {
     <div className="container">
       <div className="grid place-items-center gap-2">
         <Title title="Todo List" />
-        <div className="px-4 w-2/4 shadow-3xl rounded-lg p-12 bg-white">
+        <div className="w-full lg:w-2/4 px-4 shadow-3xl rounded-lg p-12 bg-white">
           <div className="flex justify-between">
             <TodoForm onSubmit={addTodo} />
             <SearchBar

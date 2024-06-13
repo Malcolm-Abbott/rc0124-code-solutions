@@ -18,8 +18,8 @@ export function TodoFooter({
         <div
           className={
             filter === 'all'
-              ? 'basis-1/3 text-center border-l-2 border-gray-200 bg-blue-700 text-white'
-              : 'basis-1/3 text-center border-l-2 border-gray-200'
+              ? 'flex items-center justify-center basis-1/3 text-center border-l-2 border-gray-200 bg-blue-700 text-white'
+              : 'flex items-center justify-center basis-1/3 text-center border-l-2 border-gray-200'
           }
           onClick={() => setFilter('all')}>
           all
@@ -27,8 +27,8 @@ export function TodoFooter({
         <div
           className={
             filter === 'active'
-              ? 'basis-1/3 text-center bg-blue-700 text-white'
-              : 'basis-1/3 text-center'
+              ? 'flex items-center justify-center basis-1/3 text-center bg-blue-700 text-white'
+              : 'flex items-center justify-center basis-1/3 text-center'
           }
           onClick={() => setFilter('active')}>
           active
@@ -36,8 +36,8 @@ export function TodoFooter({
         <div
           className={
             filter === 'complete'
-              ? 'basis-1/3 text-center bg-blue-700 text-white'
-              : 'basis-1/3 text-center'
+              ? 'flex items-center justify-center basis-1/3 text-center bg-blue-700 text-white'
+              : 'flex items-center justify-center basis-1/3 text-center'
           }
           onClick={() => setFilter('complete')}>
           complete
