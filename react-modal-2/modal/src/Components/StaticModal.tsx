@@ -24,7 +24,10 @@ export function StaticModal({ isActive, setIsActive }: Props) {
   return (
     <dialog
       className="rounded-3xl shadow-lg px-32 py-16 space-y-12"
-      ref={modal}>
+      ref={modal}
+      onKeyDown={(e) => {
+        if (e.key === 'Escape') setIsActive(false);
+      }}>
       <h1 className="font-semibold text-2xl">
         Are you sure you would like to delete?
       </h1>
