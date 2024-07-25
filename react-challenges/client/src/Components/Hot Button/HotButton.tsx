@@ -1,7 +1,9 @@
-import { useState } from 'react';
+type Props = {
+  count: number;
+  setCount: (arg1: number) => void;
+};
 
-export function HotButton() {
-  const [count, setCount] = useState(0);
+export function HotButton({ count, setCount }: Props) {
   let color = '';
 
   switch (true) {
@@ -26,7 +28,7 @@ export function HotButton() {
 
   return (
     <button
-      className={`px-10 py-5 ring-2 ring-slate-900 text-2xl font-semibold shadow-xl ${color} border-2 border-slate-900`}
+      className={`px-10 py-5 ring-2 ring-slate-900 text-2xl font-semibold shadow-xl ${color} border-2 border-slate-900 hover:scale-105`}
       onClick={() => setCount(count + 1)}>
       Hot Button
     </button>
