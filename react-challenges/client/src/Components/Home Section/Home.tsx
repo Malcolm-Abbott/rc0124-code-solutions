@@ -1,14 +1,6 @@
-import { Menu } from '../Menu';
 import { Challenges } from './Challenges';
 
-type Props = {
-  isActive: boolean;
-  setIsActive: (arg1: boolean) => void;
-};
-
-export function Home({ isActive, setIsActive }: Props) {
-  if (isActive) return <Menu isActive={isActive} setIsActive={setIsActive} />;
-
+export function Home() {
   return (
     <div className="container">
       <Challenges />
