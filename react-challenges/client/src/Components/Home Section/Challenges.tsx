@@ -1,6 +1,5 @@
-import { challenges, type Challenge } from '../lib/data';
+import { challenges, type Challenge, nameToUrl } from '../../lib/data';
 import { Link } from 'react-router-dom';
-import { nameToUrl } from '../lib/data';
 
 export function Challenges() {
   return (
