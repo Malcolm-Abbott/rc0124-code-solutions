@@ -3,6 +3,7 @@ import { Home } from './Components/Home Section/Home';
 import { NavBar } from './Components/Home Section/NavBar';
 import { useState } from 'react';
 import { HotButtonPage } from './Components/Hot Button/HotButtonPage';
+import { ToggleSwitchPage } from './Components/Toggle Switch/ToggleSwitchPage';
 
 function App() {
   const [isActive, setIsActive] = useState(false);
@@ -14,6 +15,7 @@ function App() {
         element={<NavBar isActive={isActive} setIsActive={setIsActive} />}>
         <Route index element={<Home />} />
         <Route path="hot-button" element={<HotButtonPage />} />
+        <Route path="toggle-switch" element={<ToggleSwitchPage />} />
       </Route>
     </Routes>
   );
