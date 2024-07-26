@@ -23,6 +23,12 @@ export const challenges: Challenge[] = [
     description:
       'Use React and CSS to create a Stopwatch component that can be started, paused, and reset.',
   },
+  {
+    name: 'Validated Input',
+    caption: 'Using React to build a form input with validation.',
+    description:
+      'Use React and CSS to create a ValidatedInput component that displays its validation status as the user types (not when the form is submitted).',
+  },
 ];
 
 export function nameToUrl(name: string): string {

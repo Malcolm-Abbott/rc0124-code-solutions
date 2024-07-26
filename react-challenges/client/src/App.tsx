@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { HotButtonPage } from './Components/Hot Button/HotButtonPage';
 import { ToggleSwitchPage } from './Components/Toggle Switch/ToggleSwitchPage';
 import { StopwatchPage } from './Components/Stopwatch/StopwatchPage';
+import { ValidatedInputPage } from './Components/Validated Input/ValidatedInputPage';
 
 function App() {
   const [isActive, setIsActive] = useState(false);
@@ -18,6 +19,7 @@ function App() {
         <Route path="hot-button" element={<HotButtonPage />} />
         <Route path="toggle-switch" element={<ToggleSwitchPage />} />
         <Route path="stopwatch" element={<StopwatchPage />} />
+        <Route path="validated-input" element={<ValidatedInputPage />} />
       </Route>
     </Routes>
   );
