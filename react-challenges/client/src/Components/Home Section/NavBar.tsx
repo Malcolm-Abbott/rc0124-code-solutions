@@ -25,7 +25,9 @@ export function NavBar({ isActive, setIsActive }: Props) {
           <div
             className="basis-1/3 flex items-center justify-center"
             onClick={handleClick}>
-            <h1 className="text-3xl font-semibold text-center tracking-wider md:text-4xl">
+            <h1
+              className="text-3xl font-semibold text-center tracking-wider cursor-pointer md:text-4xl"
+              onClick={() => navigate('/')}>
               React Challenges
             </h1>
           </div>
