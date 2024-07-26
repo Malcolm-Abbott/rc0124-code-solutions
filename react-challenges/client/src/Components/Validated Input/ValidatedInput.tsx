@@ -13,7 +13,7 @@ export function ValidatedInput({
 }: Props) {
   return (
     <input
-      className="border-2 border-slate-900 h-12 w-96 rounded-lg px-2"
+      className="border-2 border-slate-900 h-12 w-96 rounded-lg px-2 shadow-lg"
       value={value}
       onChange={(e) => setValue(e.target.value)}
       type="password"
