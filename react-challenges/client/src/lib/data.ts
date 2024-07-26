@@ -29,6 +29,12 @@ export const challenges: Challenge[] = [
     description:
       'Use React and CSS to create a ValidatedInput component that displays its validation status as the user types (not when the form is submitted).',
   },
+  {
+    name: 'Multiple Components',
+    caption: 'Working with multiple interacting React components.',
+    description:
+      'The component is passed a list of items. Only one is displayed at a time. At the top is the name of the current item. Clicking the Next and Prev buttons cycles through the items. The middle row of numbered buttons indicates which item is currently displayed. Clicking one of the buttons cycles to the item with the index listed in that button.',
+  },
 ];
 
 export function nameToUrl(name: string): string {
