@@ -35,6 +35,12 @@ export const challenges: Challenge[] = [
     description:
       'The component is passed a list of items. Only one is displayed at a time. At the top is the name of the current item. Clicking the Next and Prev buttons cycles through the items. The middle row of numbered buttons indicates which item is currently displayed. Clicking one of the buttons cycles to the item with the index listed in that button.',
   },
+  {
+    name: 'Search',
+    caption: 'Using React to build a search bar component.',
+    description:
+      'Use React and CSS to create a SearchableList component that displays a list of strings and filters them as the user types into a text field.',
+  },
 ];
 
 export function nameToUrl(name: string): string {

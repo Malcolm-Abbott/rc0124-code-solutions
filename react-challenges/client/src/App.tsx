@@ -7,6 +7,7 @@ import { ToggleSwitchPage } from './Components/Toggle Switch/ToggleSwitchPage';
 import { StopwatchPage } from './Components/Stopwatch/StopwatchPage';
 import { ValidatedInputPage } from './Components/Validated Input/ValidatedInputPage';
 import { MultipleComponentsPage } from './Components/Multiple Components/MultipleComponentsPage';
+import { SearchPage } from './Components/Search/SearchPage';
 
 function App() {
   const [isActive, setIsActive] = useState(false);
@@ -25,6 +26,7 @@ function App() {
           path="multiple-components"
           element={<MultipleComponentsPage />}
         />
+        <Route path="search" element={<SearchPage />} />
       </Route>
     </Routes>
   );
