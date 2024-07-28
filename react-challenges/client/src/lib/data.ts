@@ -41,6 +41,12 @@ export const challenges: Challenge[] = [
     description:
       'Use React and CSS to create a SearchableList component that displays a list of strings and filters them as the user types into a text field.',
   },
+  {
+    name: 'Accordion',
+    caption: 'Using React to build an expandable list of information.',
+    description:
+      'Use React and CSS to create an Accordion component that can hide and show content in a user interface.',
+  },
 ];
 
 export function nameToUrl(name: string): string {

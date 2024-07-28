@@ -8,6 +8,7 @@ import { StopwatchPage } from './Components/Stopwatch/StopwatchPage';
 import { ValidatedInputPage } from './Components/Validated Input/ValidatedInputPage';
 import { MultipleComponentsPage } from './Components/Multiple Components/MultipleComponentsPage';
 import { SearchPage } from './Components/Search/SearchPage';
+import { AccordionPage } from './Components/Accordion/AccordionPage';
 
 function App() {
   const [isActive, setIsActive] = useState(false);
@@ -27,6 +28,7 @@ function App() {
           element={<MultipleComponentsPage />}
         />
         <Route path="search" element={<SearchPage />} />
+        <Route path="accordion" element={<AccordionPage />} />
       </Route>
     </Routes>
   );
