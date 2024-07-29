@@ -47,6 +47,12 @@ export const challenges: Challenge[] = [
     description:
       'Use React and CSS to create an Accordion component that can hide and show content in a user interface.',
   },
+  {
+    name: 'Carousel',
+    caption: 'Using React to build an interactive image carousel.',
+    description:
+      'Use React and CSS to create a Carousel component that has progress indicators, forward and back controls, and automatically cycles through a list of images.',
+  },
 ];
 
 export function nameToUrl(name: string): string {

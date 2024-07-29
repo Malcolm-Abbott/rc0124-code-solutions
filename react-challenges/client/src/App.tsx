@@ -9,6 +9,7 @@ import { ValidatedInputPage } from './Components/Validated Input/ValidatedInputP
 import { MultipleComponentsPage } from './Components/Multiple Components/MultipleComponentsPage';
 import { SearchPage } from './Components/Search/SearchPage';
 import { AccordionPage } from './Components/Accordion/AccordionPage';
+import { CarouselPage } from './Components/Carousel/CarouselPage';
 
 function App() {
   const [isActive, setIsActive] = useState(false);
@@ -29,6 +30,7 @@ function App() {
         />
         <Route path="search" element={<SearchPage />} />
         <Route path="accordion" element={<AccordionPage />} />
+        <Route path="carousel" element={<CarouselPage />} />
       </Route>
     </Routes>
   );
