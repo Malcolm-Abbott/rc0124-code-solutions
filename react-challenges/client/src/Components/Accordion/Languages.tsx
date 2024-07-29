@@ -36,18 +36,23 @@ function Language({
 
   switch (language) {
     case 'Hypertext Markup Language':
-      description = 'Hypertext Markup Language (HTML)';
+      description =
+        'Hypertext Markup Language (HTML) is the standard markup language for creating web pages and web applications. With Cascading Style Sheets (CSS) and JavaScript, it forms a triad of cornerstone technologies for the World Wide Web.';
       break;
     case 'Cascading Style Sheets':
-      description = 'Cascading Style Sheets (CSS)';
+      description =
+        'Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language like HTML. CSS is a cornerstone technology of the Wolrd Wide Web alongside HTML and JavaScript.';
       break;
     case 'JavaScript':
-      description = 'JavaScript,';
+      description =
+        'JavaScript, often abbreviated as JS, is a high-level interpreted programming language that conforms to the ECMAScript specification. JavaScript has curly-bracket syntax, dynamic typing, prototype-based object-orientation and first-class function.';
       break;
   }
 
   function handleClick() {
-    if (activeLanguage) return setActiveLanguage('');
+    if (activeLanguage && language === activeLanguage)
+      return setActiveLanguage('');
+    if (!activeLanguage) return setActiveLanguage(language);
     setActiveLanguage(language);
   }
 
@@ -59,7 +64,7 @@ function Language({
         </h1>
       </div>
       <div
-        className={`w-96 pl-3 py-3 bg-gradient-to-r from-slate-900 to-slate-700 cursor-pointer ring-slate-900 hover:ring-2 hover:bg-gradient-to-l ${display}`}>
+        className={`w-96 pl-3 py-3 bg-gradient-to-r from-slate-900 to-slate-700 cursor-pointer ring-slate-900 hover:ring-2 hover:bg-gradient-to-l ${display} mt-1`}>
         <p className="text-white">{description}</p>
       </div>
     </li>
