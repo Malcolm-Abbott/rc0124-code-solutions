@@ -1,0 +1,17 @@
+                                  List of databases
+       Name        |  Owner   | Encoding | Collate |  Ctype  |   Access privileges   
+-------------------+----------+----------+---------+---------+-----------------------
+ codeJournal       | dev      | UTF8     | C.UTF-8 | C.UTF-8 | 
+ dev               | dev      | UTF8     | C.UTF-8 | C.UTF-8 | 
+ fullStack         | dev      | UTF8     | C.UTF-8 | C.UTF-8 | 
+ fullStackPractice | dev      | UTF8     | C.UTF-8 | C.UTF-8 | 
+ pagila            | dev      | UTF8     | C.UTF-8 | C.UTF-8 | 
+ postgres          | postgres | UTF8     | C.UTF-8 | C.UTF-8 | 
+ studentGradeTable | dev      | UTF8     | C.UTF-8 | C.UTF-8 | 
+ template0         | postgres | UTF8     | C.UTF-8 | C.UTF-8 | =c/postgres          +
+                   |          |          |         |         | postgres=CTc/postgres
+ template1         | postgres | UTF8     | C.UTF-8 | C.UTF-8 | =c/postgres          +
+                   |          |          |         |         | postgres=CTc/postgres
+ userManagement    | dev      | UTF8     | C.UTF-8 | C.UTF-8 | 
+(10 rows)
+
